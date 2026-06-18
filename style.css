@@ -1,0 +1,488 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #050816;
+}
+
+.header {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(80, 120, 255, 0.3), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(180, 80, 255, 0.3), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(0, 200, 255, 0.2), transparent 25%),
+        linear-gradient(135deg, #050816, #0b1026, #150d2e);
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    flex-wrap: wrap;
+}
+
+.header-img {
+    flex-shrink: 0;
+}
+
+.header-img img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.name {
+    color: bisque;
+    margin-left: 40px;
+    flex: 1;
+}
+
+.name h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.name p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.icons .material-symbols-outlined {
+    font-size: 36px;
+    color: bisque;
+    transition: 0.3s;
+}
+
+.icons .material-symbols-outlined:hover {
+    transform: scale(1.2);
+    color: #7a5cff;
+}
+
+.body {
+    background:
+        radial-gradient(circle at top left, rgba(0, 255, 255, 0.10), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.10), transparent 35%),
+        #050816;
+    color: white;
+    min-height: 70vh;
+    padding: 40px 20px 60px;
+}
+
+.projects h2 {
+    color: bisque;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.carousel-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    padding: 10px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.card {
+    min-width: 280px;
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 20px 20px 24px;
+    color: bisque;
+    text-decoration: none;
+    transition: 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #523bbb;
+    box-shadow: 0 0 30px rgba(0, 102, 255, 0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.4;
+    flex: 1;
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.tags span {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 4px 12px;
+    border-radius: 40px;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #c0b3a0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: bisque;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn:hover {
+    background: rgba(82, 59, 187, 0.7);
+    border-color: #7a5cff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+.socials {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(80, 120, 255, 0.08), transparent 30%),
+        radial-gradient(circle at 70% 80%, rgba(255, 0, 200, 0.08), transparent 30%),
+        #050816;
+    padding: 60px 20px 80px;
+}
+
+.midias {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.midias h2 {
+    color: bisque;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-card {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: bisque;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.social-card:hover::before {
+    left: 100%;
+}
+
+.social-card:hover {
+    transform: translateX(10px);
+    border-color: #7a5cff;
+    box-shadow: 0 0 30px rgba(0, 102, 255, 0.2);
+}
+
+.social-card .material-symbols-outlined {
+    font-size: 40px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover .material-symbols-outlined {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.social-info {
+    flex: 1;
+}
+
+.social-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.social-info p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.social-card:hover .social-info p {
+    opacity: 1;
+}
+
+.arrow {
+    font-size: 24px;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.social-card:hover .arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.social-card.linkedin:hover {
+    border-color: #0a66c2;
+    box-shadow: 0 0 30px rgba(10, 102, 194, 0.3);
+}
+
+.social-card.linkedin:hover .material-symbols-outlined {
+    color: #0a66c2;
+}
+
+.social-card.instagram:hover {
+    border-color: #e4405f;
+    box-shadow: 0 0 30px rgba(228, 64, 95, 0.3);
+}
+
+.social-card.instagram:hover .material-symbols-outlined {
+    color: #e4405f;
+}
+
+.social-card.email:hover {
+    border-color: #ea4335;
+    box-shadow: 0 0 30px rgba(234, 67, 53, 0.3);
+}
+
+.social-card.email:hover .material-symbols-outlined {
+    color: #ea4335;
+}
+
+footer {
+    height: 80px;
+    background: linear-gradient(135deg, #0b1026, #150d2e);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5a4f6e;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ALTERADO: SEÇÃO DE RESPONSIVIDADE CORRIGIDA PARA O IPHONE 14 / MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .name {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+
+    .name h1 {
+        font-size: 1.8rem;
+    }
+
+    .icons {
+        justify-content: center;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .header-img img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .social-card {
+        padding: 16px 20px;
+        gap: 14px;
+    }
+
+    .social-card .material-symbols-outlined {
+        font-size: 32px;
+    }
+
+    .social-info h3 {
+        font-size: 1rem;
+    }
+
+    .social-info p {
+        font-size: 0.8rem;
+    }
+
+    .midias h2 {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+
+    .social-card:hover {
+        transform: translateX(5px);
+    }
+
+    /* Ajustes cruciais do carrossel no mobile */
+    .carousel-wrapper {
+        padding: 10px 20px; /* Garante margem para os botões não cobrirem o texto */
+    }
+
+    .carousel-track {
+        gap: 20px; /* Ajusta o espaçamento entre os cards no mobile */
+    }
+
+    .card {
+        /* O card passa a ocupar 100% da largura útil da tela do aparelho */
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        /* Mantido em 100% para manter precisão de cálculo no slider */
+        min-width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px;
+    }
+
+    .card-img {
+        height: 100px;
+    }
+
+    .projects h2 {
+        font-size: 1.6rem;
+    }
+
+    .social-card {
+        padding: 14px 16px;
+        gap: 10px;
+        border-radius: 16px;
+    }
+
+    .social-card .material-symbols-outlined {
+        font-size: 28px;
+    }
+
+    .social-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .social-info p {
+        font-size: 0.7rem;
+    }
+
+    .arrow {
+        font-size: 18px;
+    }
+
+    .midias h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .carousel-btn.left {
+        left: 5px;
+    }
+
+    .carousel-btn.right {
+        right: 5px;
+    }
+}
