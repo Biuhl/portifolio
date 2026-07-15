@@ -1,522 +1,849 @@
+:root {
+    /* Cores Primárias e Accent baseadas em Linear/Stripe (Tema Escuro Premium) */
+    --bg-main: #030014;
+    --bg-gradient: radial-gradient(circle at 50% -20%, #150035 0%, #030014 60%);
+    --accent-blue: #00f2fe;
+    --accent-purple: #7000ff;
+    --accent-indigo: #4f46e5;
+    
+    /* Cores Textuais */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    /* Efeitos de Glassmorphism & UI */
+    --glass-bg: rgba(10, 8, 28, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.07);
+    --glass-border-hover: rgba(255, 255, 255, 0.15);
+    --card-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+    
+    /* Tipografia & Suavização */
+    --font-main: 'Inter', sans-serif;
+}
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #050816;
+    background: var(--bg-main);
+    background-image: var(--bg-gradient);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-.header {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(80, 120, 255, 0.3), transparent 25%),
-        radial-gradient(circle at 80% 30%, rgba(180, 80, 255, 0.3), transparent 25%),
-        radial-gradient(circle at 50% 80%, rgba(0, 200, 255, 0.2), transparent 25%),
-        linear-gradient(135deg, #050816, #0b1026, #150d2e);
-    width: 100%;
-    height: 20vh;
-    display: flex;
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(112, 0, 255, 0.3);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 242, 254, 0.5);
+}
+
+/* ==========================================================================
+   2. COMPONENTES GLOBAIS & BOTÕES
+   ========================================================================== */
+
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Botões Modernos com Transições Suaves */
+.btn {
+    display: inline-flex;
     align-items: center;
-    padding: 0 40px;
-    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.header-img {
-    flex-shrink: 0;
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(112, 0, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.header-img img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(112, 0, 255, 0.6), 0 0 15px rgba(0, 242, 254, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-.name {
-    color: bisque;
-    margin-left: 40px;
-    flex: 1;
+.btn-secondary {
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
 }
 
-.name h1 {
-    font-size: 2.2rem;
-    letter-spacing: 2px;
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--glass-border-hover);
+    transform: translateY(-2px);
 }
 
-.name p {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    margin-top: 4px;
+/* Badges de Destaque */
+.badge {
+    display: inline-block;
+    background: rgba(112, 0, 255, 0.15);
+    border: 1px solid rgba(112, 0, 255, 0.3);
+    color: var(--accent-blue);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }
 
-.icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.icons .material-symbols-outlined {
-    font-size: 36px;
-    color: bisque;
-    transition: 0.3s;
-}
-
-.icons .material-symbols-outlined:hover {
-    transform: scale(1.2);
-    color: #7a5cff;
-}
-
-.body {
-    background:
-        radial-gradient(circle at top left, rgba(0, 255, 255, 0.10), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.10), transparent 35%),
-        #050816;
-    color: white;
-    min-height: 80vh;
-    padding: 40px 20px 60px;
-}
-
-.projects h2 {
-    color: bisque;
+/* Títulos de Seção Padronizados */
+.section-header {
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
+    margin-bottom: 4rem;
 }
 
-.carousel-wrapper {
+.section-header.align-left {
+    text-align: left;
+}
+
+.section-tag {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   3. BARRA DE NAVEGAÇÃO (NAVBAR GLASSMORPHIC)
+   ========================================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(3, 0, 20, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+}
+
+.logo .dot {
+    color: var(--accent-blue);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+/* ==========================================================================
+   4. SEÇÃO 1: HERO SECTION
+   ========================================================================== */
+
+.hero-section {
+    padding: 10rem 2rem 6rem 2rem;
     position: relative;
     overflow: hidden;
-    border-radius: 24px;
-    padding: 10px 0;
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(3, 0, 20, 0.75) 0%, 
+        rgba(3, 0, 20, 0.92) 100%  
+    ), url('img/quasar.jpg'); 
+
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
 }
 
-.carousel-track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.5s ease;
-    will-change: transform;
-}
-
-.card {
-    min-width: 280px;
-    max-width: 280px;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 20px 20px 24px;
-    color: bisque;
-    text-decoration: none;
-    transition: 0.3s;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #523bbb;
-    box-shadow: 0 0 30px rgba(0, 102, 255, 0.4);
-}
-
-.card-img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 16px;
-    margin-bottom: 14px;
-    background: #1a1a2e;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-.card p {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    line-height: 1.4;
-    flex: 1;
-    margin-bottom: 12px;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-}
-
-.tags span {
-    background: rgba(255, 255, 255, 0.07);
-    padding: 4px 12px;
-    border-radius: 40px;
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: #c0b3a0;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(20, 20, 40, 0.6);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: bisque;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    font-size: 28px;
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 620px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(to right, #ffffff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Avatar de Alto Acabamento Estético (Lado Direito) */
+.hero-avatar-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.avatar-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(112,0,255,0.4) 0%, rgba(0,242,254,0.1) 70%, transparent 100%);
+    filter: blur(15px);
+    z-index: 1;
+}
+
+.avatar-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-avatar-wrapper:hover .avatar-image {
+    transform: scale(1.05);
+    border-color: var(--accent-blue);
+    box-shadow: 0 25px 50px rgba(0, 242, 254, 0.3), inset 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+/* ==========================================================================
+   5. SEÇÃO 2: TECNOLOGIAS (ICONS COM TOOLTIPS)
+   ========================================================================== */
+
+.techs-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.techs-grid {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
+}
+
+.tech-card {
+    position: relative;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-icon {
+    font-size: 2.25rem !important;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+/* Tooltips Avançados via Atributos CSS puros */
+.tech-card::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #0f172a;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
     z-index: 10;
-    transition: 0.3s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-.carousel-btn:hover {
-    background: rgba(82, 59, 187, 0.7);
-    border-color: #7a5cff;
-    transform: translateY(-50%) scale(1.05);
+/* Hover e Efeitos de Brilho de Tecnologia */
+.tech-card:hover {
+    background: rgba(112, 0, 255, 0.1);
+    border-color: var(--accent-blue);
+    transform: scale(1.15) translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.15);
 }
 
-.carousel-btn.left {
-    left: 10px;
+.tech-card:hover .tech-icon {
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
-.carousel-btn.right {
-    right: 10px;
+.tech-card:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
-.socials {
-    background:
-        radial-gradient(circle at 30% 20%, rgba(80, 120, 255, 0.08), transparent 30%),
-        radial-gradient(circle at 70% 80%, rgba(255, 0, 200, 0.08), transparent 30%),
-        #050816;
-    padding: 60px 20px 80px;
-    min-height: 100vh;
+/* ==========================================================================
+   6. SEÇÃO 3: SOBRE MIM
+   ========================================================================== */
+
+.about-section {
+    background: rgba(112, 0, 255, 0.02);
+    border-y: 1px solid var(--glass-border);
+    padding: 8rem 2rem;
 }
 
-.midias {
-    max-width: 900px;
+.about-container {
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.midias h2 {
-    color: bisque;
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-    font-weight: 300;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
 }
 
-.social-links {
+.about-text p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Card de Habilidades Interno */
+.about-skills-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--card-shadow);
+}
+
+.about-skills-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.skills-columns ul {
+    list-style: none;
+}
+
+.skills-columns li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+}
+
+.skills-columns li strong {
+    color: var(--text-primary);
+    display: block;
+}
+
+.skill-bullet {
+    font-size: 1.2rem !important;
+    color: var(--accent-blue);
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   7. SEÇÃO 4: PROJETOS (CARDS GLASSMORPHIC MODERNOS)
+   ========================================================================== */
+
+.projects-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
 }
 
-.social-card {
-    width: 100%;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    color: bisque;
-    transition: all 0.3s ease;
+/* Mantém Aspect Ratio 16:9 na imagem do card */
+.project-image-wrapper {
     position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Aspect Ratio 16:9 */
     overflow: hidden;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.social-card::before {
-    content: '';
+.project-img {
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-    transition: left 0.5s ease;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.social-card:hover::before {
-    left: 100%;
+/* Efeito de Vidro e Detalhes de Conteúdo */
+.project-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.social-card:hover {
-    transform: translateX(10px);
-    border-color: #7a5cff;
-    box-shadow: 0 0 30px rgba(0, 102, 255, 0.2);
+.project-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
 }
 
-.social-card .material-symbols-outlined {
-    font-size: 40px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
 }
 
-.social-card:hover .material-symbols-outlined {
-    transform: scale(1.2) rotate(-5deg);
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
-.social-info {
-    flex: 1;
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
 }
 
-.social-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 4px;
-    font-weight: 600;
+.project-tags span {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
-.social-info p {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
+/* Links do Card de Projeto */
+.project-links {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
-.social-card:hover .social-info p {
-    opacity: 1;
-}
-
-.arrow {
-    font-size: 24px;
-    opacity: 0.3;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.social-card:hover .arrow {
-    opacity: 1;
-    transform: translateX(5px);
-}
-
-.social-card.linkedin:hover {
-    border-color: #0a66c2;
-    box-shadow: 0 0 30px rgba(10, 102, 194, 0.3);
-}
-
-.social-card.linkedin:hover .material-symbols-outlined {
-    color: #0a66c2;
-}
-
-.social-card.instagram:hover {
-    border-color: #e4405f;
-    box-shadow: 0 0 30px rgba(228, 64, 95, 0.3);
-}
-
-.social-card.instagram:hover .material-symbols-outlined {
-    color: #e4405f;
-}
-
-.social-card.email:hover {
-    border-color: #ea4335;
-    box-shadow: 0 0 30px rgba(234, 67, 53, 0.3);
-}
-
-.social-card.email:hover .material-symbols-outlined {
-    color: #ea4335;
-}
-
-footer {
-    height: 80px;
-    background: linear-gradient(135deg, #0b1026, #150d2e);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+.btn-project {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #5a4f6e;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-github {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+}
+
+.btn-github:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--glass-border-hover);
+}
+
+.btn-demo {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(112, 0, 255, 0.2));
+    border: 1px solid rgba(112, 0, 255, 0.4);
+    color: var(--accent-blue);
+}
+
+.btn-demo:hover {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.4), rgba(112, 0, 255, 0.4));
+    border-color: var(--accent-blue);
+}
+
+/* Efeito de Hover Geral no Card */
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 242, 254, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(112, 0, 255, 0.25);
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. SEÇÃO 5: CONTATO & CURRÍCULO
+   ========================================================================== */
+
+.contact-section {
+    background: rgba(3, 0, 20, 0.8);
+    padding: 8rem 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Card Clínico de Conexões */
+.contact-card-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 1.25rem 2rem;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-card-item.no-link {
+    cursor: default;
+}
+
+.contact-icon {
+    font-size: 2rem !important;
+    color: var(--accent-blue);
+    background: rgba(0, 242, 254, 0.07);
+    padding: 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.contact-card-item h4 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+}
+
+.contact-card-item p {
     font-size: 0.9rem;
+    color: var(--text-secondary);
 }
 
-/*================================*/
+.contact-card-item:not(.no-link):hover {
+    transform: translateX(10px);
+    border-color: var(--accent-blue);
+    background: rgba(0, 242, 254, 0.04);
+}
 
-.learn{
-    height: 100vh;
-    background-color: #0a66c2;
-    display:flex;
+/* Box de Call-to-Action de Download do Currículo */
+.resume-cta-box {
+    background: linear-gradient(135deg, rgba(112, 0, 255, 0.1), rgba(0, 242, 254, 0.05));
+    border: 1px solid rgba(112, 0, 255, 0.2);
+    border-radius: 24px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
-.certificados{
-    background-color: #04ff00;
+
+.resume-icon {
+    font-size: 3.5rem !important;
+    color: var(--accent-blue);
+    margin-bottom: 1.5rem;
 }
-.textConteiner{
-    background-color: #e4405f;
-    width: 40vh;
-    height: 60vh;
-    margin-left: 100px;
-    margin-top: 100px auto;
+
+.resume-cta-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
-.textConteiner .texto{
-    background-color: #ffffff;
+
+.resume-cta-box p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.btn-download {
     width: 100%;
-    height: 60vh;
-    padding-top: 0px;
-}
-.textConteiner .imgDiv{
-    background-color: #523bbb;
-    width: 100%;
-    height: 40vh;
-}
-.textConteiner .historias{
-    background-color: #132913;
-    width: 80px;
-    height: 100px;
-    margin-right: 10px;
+    justify-content: center;
 }
 
-/*================================*/
+/* ==========================================================================
+   9. SEÇÃO 6: RODAPÉ (FOOTER)
+   ========================================================================== */
+
+.footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem 2rem;
+    background: #02000c;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-socials a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--accent-blue);
+}
+
+.back-to-top {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(112, 0, 255, 0.4);
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDADE COMPLETA (MEDIA QUERIES)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero-cta-group {
+        justify-content: center;
+    }
+    
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-container .section-header {
+        text-align: center;
+    }
+}
 
 @media (max-width: 768px) {
-    .header {
+    .navbar-container {
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        display: none; /* Em projetos de produção, utilize menu hambúrguer interativo com JS */
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
         flex-direction: column;
-        height: auto;
-        padding: 30px 20px;
+        gap: 1.5rem;
         text-align: center;
     }
 
-    .name {
-        margin-left: 0;
-        margin-top: 16px;
-    }
-
-    .name h1 {
-        font-size: 1.8rem;
-    }
-
-    .icons {
-        justify-content: center;
-    }
-
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 20px;
-    }
-
-    .header-img img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .social-card {
-        padding: 16px 20px;
-        gap: 14px;
-    }
-
-    .social-card .material-symbols-outlined {
-        font-size: 32px;
-    }
-
-    .social-info h3 {
-        font-size: 1rem;
-    }
-
-    .social-info p {
-        font-size: 0.8rem;
-    }
-
-    .midias h2 {
-        font-size: 1.8rem;
-        margin-bottom: 35px;
-    }
-
-    .social-card:hover {
-        transform: translateX(5px);
-    }
-
-    /* Ajustes cruciais do carrossel no mobile */
-    .carousel-wrapper {
-        padding: 10px 20px; /* Garante margem para os botões não cobrirem o texto */
-    }
-
-    .carousel-track {
-        gap: 20px; /* Ajusta o espaçamento entre os cards no mobile */
-    }
-
-    .card {
-        /* O card passa a ocupar 100% da largura útil da tela do aparelho */
-        min-width: 100% !important;
-        max-width: 100% !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        /* Mantido em 100% para manter precisão de cálculo no slider */
-        min-width: 100% !important;
-        max-width: 100% !important;
-        padding: 16px;
-    }
-
-    .card-img {
-        height: 100px;
-    }
-
-    .projects h2 {
-        font-size: 1.6rem;
-    }
-
-    .social-card {
-        padding: 14px 16px;
-        gap: 10px;
-        border-radius: 16px;
-    }
-
-    .social-card .material-symbols-outlined {
-        font-size: 28px;
-    }
-
-    .social-info h3 {
-        font-size: 0.9rem;
-    }
-
-    .social-info p {
-        font-size: 0.7rem;
-    }
-
-    .arrow {
-        font-size: 18px;
-    }
-
-    .midias h2 {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-    }
-
-    .carousel-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 18px;
-    }
-
-    .carousel-btn.left {
-        left: 5px;
-    }
-
-    .carousel-btn.right {
-        right: 5px;
+    .footer-right {
+        flex-direction: column;
+        gap: 1rem;
     }
 }

@@ -1,255 +1,351 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gabriel Leite - Portfólio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Leite | Software Engineer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-img">
-            <img src="img/biuhl.jpg">
-        </div>
-        <div class="name">
-            <h1>GABRIEL LEITE</h1>
-            <p>Desenvolvedor Full Stack</p>
-            <div class="icons">
-                <span class="material-symbols-outlined">code</span>
-                <span class="material-symbols-outlined">php</span>
-                <span class="material-symbols-outlined">javascript</span>
-                <span class="material-symbols-outlined">css</span>
-                <span class="material-symbols-outlined">html</span>
-                <span class="material-symbols-outlined">device_hub</span>
-                <span class="material-symbols-outlined">lan</span>
-            </div>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">GL<span class="dot">.</span></a>
+            <nav class="nav-menu">
+                <a href="#sobre">Sobre</a>
+                <a href="#tecnologias">Techs</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
         </div>
     </header>
-    <main class="body">
-        <section class="projects">
-            <h2>Meus Projetos</h2>
-            <div class="carousel-wrapper">
-                <button class="carousel-btn left" id="prevBtn">‹</button>
-                <div class="carousel-track" id="carouselTrack">
-                    <a href="https://github.com/Biuhl/Projeto-Extensao" class="card">
-                        <img src="img/fatec.jpg" class="card-img">
-                        <h3>📚 Projeto Extensão</h3>
-                        <p>Projeto desenvolvido para atividades de extensão acadêmica.</p>
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Biuhl/SIGA-ALUNOS-ES" class="card">
-                        <img src="img/siga.png" class="card-img" />
-                        <h3>🎓 SIGA Alunos</h3>
-                        <p>Sistema acadêmico para gerenciamento de informações estudantis.</p>
-                        <div class="tags">
-                            <span>JavaScript</span>
-                            <span>Web</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/guifelippe/CalculusWorkbench" class="card">
-                        <img src="img/calc.png" class="card-img" />
-                        <h3>🧮 Calculus Workbench</h3>
-                        <p>Ferramenta web para cálculos matemáticos e estudos de cálculo.</p>
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Biuhl/CRUD-de-tarefas" class="card">
-                        <img src="img/crud.jpeg" class="card-img" />
-                        <h3>✅ CRUD de Tarefas</h3>
-                        <p>Sistema para cadastro, edição e remoção de tarefas.</p>
-                        <div class="tags">
-                            <span>CRUD</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Biuhl/CRUD-com-Interface" class="card">
-                        <img src="img/apiexpress.jpeg" class="card-img" />
-                        <h3>🎨 CRUD com Interface</h3>
-                        <p>Versão aprimorada com foco em experiência do usuário.</p>
-                        <div class="tags">
-                            <span>UI</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Biuhl/Projeto-EXPRESS-estudo-de-API" class="card">
-                        <img src="img/automTaref.jpeg" class="card-img" />
-                        <h3>🚀 API Express</h3>
-                        <p>Projeto para estudo de APIs REST utilizando Express.</p>
-                        <div class="tags">
-                            <span>Node.js</span>
-                            <span>Express</span>
-                            <span>API</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Biuhl/automacao-tarefas-estudo" class="card">
-                        <img src="img/apiexpress.jpeg" class="card-img" />
-                        <h3>🤖 Automação de Tarefas</h3>
-                        <p>Automatização de processos repetitivos para ganho de produtividade.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Automação</span>
-                        </div>
-                    </a>
+
+    <main>
+        <section class="hero-section" id="inicio">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="badge">DISPONIVEL PARA NOVOS PROJETOS</span>
+                    <h1 class="hero-title">GABRIEL LEITE</h1>
+                    <h2 class="hero-subtitle">DESENVOLVEDOR DE SOFTWARE</h2>
+                    <p class="hero-description">
+                        Especializado em engenharia de software de alta performance, automação DevOps e interfaces ultra-responsivas. Traduzo lógica de negócios complexa em soluções digitais fluidas, modernas e escaláveis.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                        <a href="#contato" class="btn btn-secondary">Entrar em Contato</a>
+                    </div>
                 </div>
-                <button class="carousel-btn right" id="nextBtn">›</button>
+
+                <div class="hero-avatar-wrapper">
+                    <div class="avatar-glow"></div>
+                    <a href="https://www.instagram.com/biu_hl/"> <img src="img/biu.jpeg" alt="Foto de Gabriel Leite" class="avatar-image"> </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="techs-section" id="tecnologias">
+            <div class="section-header">
+                <span class="section-tag">Stack & Skills</span>
+                <h2 class="section-title">Tecnologias & Ferramentas</h2>
+            </div>
+            <div class="techs-grid">
+                <div class="tech-card" data-tooltip="JavaScript / TypeScript">
+                    <span class="material-symbols-rounded tech-icon">code</span>
+                </div>
+                <div class="tech-card" data-tooltip="Desenvolvimento Web & UI">
+                    <span class="material-symbols-rounded tech-icon">language</span>
+                </div>
+                <div class="tech-card" data-tooltip="Bancos de Dados (SQL/NoSQL)">
+                    <span class="material-symbols-rounded tech-icon">database</span>
+                </div>
+                <div class="tech-card" data-tooltip="Terminal, Bash & Automação">
+                    <span class="material-symbols-rounded tech-icon">terminal</span>
+                </div>
+                <div class="tech-card" data-tooltip="Integração & APIs REST">
+                    <span class="material-symbols-rounded tech-icon">api</span>
+                </div>
+                <div class="tech-card" data-tooltip="Arquitetura de Sistemas">
+                    <span class="material-symbols-rounded tech-icon">computer</span>
+                </div>
+                <div class="tech-card" data-tooltip="Segurança & Boas Práticas">
+                    <span class="material-symbols-rounded tech-icon">security</span>
+                </div>
+                <div class="tech-card" data-tooltip="Cloud Computing & CI/CD">
+                    <span class="material-symbols-rounded tech-icon">cloud</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="sobre">
+            <div class="about-container">
+                <div class="section-header align-left">
+                    <span class="section-tag">Minha Jornada</span>
+                    <h2 class="section-title">Quem sou eu</h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Olá! Sou desenvolvedor apaixonado por arquitetura limpa, automação e otimização de processos. Atualmente estudando tecnologia, dedico meu foco ao ecossistema do desenvolvimento de software de ponta a ponta, desde a prototipagem de interfaces (UI/UX) até pipelines complexos de integração contínua (CI/CD) e gerenciamento de servidores.
+                        </p>
+                        <p>
+                            Acredito que o código bem estruturado deve vir acompanhado de uma experiência de usuário rica, veloz e sem atritos. Minha rotina envolve trabalhar ativamente com metodologias ágeis (Scrum/Kanban), modelagem física de dados relacionais e implementação de ferramentas matemáticas ou analíticas customizadas.
+                        </p>
+                        <p>
+                            Busco constantemente aplicar as melhores práticas de engenharia de software para construir soluções robustas que gerem valor real e escalabilidade industrial para negócios digitais.
+                        </p>
+                    </div>
+
+                    <div class="about-skills-card">
+                        <h3>Habilidades & Foco</h3>
+                        <div class="skills-columns">
+                            <ul>
+                                <li>
+                                    <span class="material-symbols-rounded skill-bullet">check_circle</span>
+                                    <strong>Desenvolvimento Web:</strong> JS, TypeScript & Node.js
+                                </li>
+                                <li>
+                                    <span class="material-symbols-rounded skill-bullet">check_circle</span>
+                                    <strong>DevOps & Infra:</strong> Linux (Fedora/Debian) & Bash
+                                </li>
+                                <li>
+                                    <span class="material-symbols-rounded skill-bullet">check_circle</span>
+                                    <strong>Banco de Dados:</strong> MySQL & Modelagem Física
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <span class="material-symbols-rounded skill-bullet">check_circle</span>
+                                    <strong>Gestão Ágil:</strong> Scrum, Kanban & Jira
+                                </li>
+                                <li>
+                                    <span class="material-symbols-rounded skill-bullet">check_circle</span>
+                                    <strong>Cálculo Numérico:</strong> Algoritmos Matemáticos
+                                </li>
+                                <li>
+                                    <span class="material-symbols-rounded skill-bullet">check_circle</span>
+                                    <strong>UX/UI:</strong> Prototipagem & Micro-interações
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section" id="projetos">
+            <div class="section-header">
+                <span class="section-tag">Portfólio</span>
+                <h2 class="section-title">Projetos em Destaque</h2>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="img/calc.png" alt="Calculadora de Derivadas" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Math & Front-End</span>
+                        <h3 class="project-title">Calculadora de Derivadas</h3>
+                        <p class="project-desc">
+                            Aplicação interativa para resolução matemática simbólica e numérica de derivadas e limites. Possui interface moderna com renderização algébrica fluida.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>Math.js</span>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/guifelippe/CalculusWorkbench" class="btn-project btn-github">
+                                <span class="material-symbols-rounded">code</span> GitHub
+                            </a>
+                            <a href="https://github.com/guifelippe/CalculusWorkbench" class="btn-project btn-demo">
+                                <span class="material-symbols-rounded">open_in_new</span> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="img/fatec.jpg" alt="Hangman Game Terminal" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Levantamento de Requisitos</span>
+                        <h3 class="project-title">Projeto Integrador</h3>
+                        <p class="project-desc">
+                            Projeto desenvolvido para atividades de extensão acadêmica.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Java Script</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Biuhl/Projeto-Extensao" class="btn-project btn-github">
+                                <span class="material-symbols-rounded">code</span> GitHub
+                            </a>
+                            <a href="https://github.com/Biuhl/Projeto-Extensao" class="btn-project btn-demo">
+                                <span class="material-symbols-rounded">visibility</span> Ver Relatório
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="img/siga.png" alt="Modelagem de Banco de Dados" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Siga Alunos</span>
+                        <h3 class="project-title">Gerenciador de Presença</h3>
+                        <p class="project-desc">
+                            Sistema acadêmico para gerenciamento de informações estudantis.
+                        </p>
+                        <div class="project-tags">
+                            <span>MySQL Workbench</span>
+                            <span>Documentação</span>
+                            <span>DB Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Biuhl/SIGA-ALUNOS-ES" class="btn-project btn-github">
+                                <span class="material-symbols-rounded">code</span> GitHub
+                            </a>
+                            <a href="https://github.com/Biuhl/SIGA-ALUNOS-ES" class="btn-project btn-demo">
+                                <span class="material-symbols-rounded">schema</span> DDL Script
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="img/crud.jpeg" alt="CRUD" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">API Json</span>
+                        <h3 class="project-title">CRUD com interface</h3>
+                        <p class="project-desc">
+                            Projeto desenvolvido com foco em experiência do usuário.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>API REST FULL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://biuhl.github.io/portifolio/img/apiexpress.jpeg" class="btn-project btn-github">
+                                <span class="material-symbols-rounded">code</span> GitHub
+                            </a>
+                            <a href="https://biuhl.github.io/portifolio/img/apiexpress.jpeg" class="btn-project btn-demo">
+                                <span class="material-symbols-rounded">open_in_new</span> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                 <article class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="img/automTaref.jpeg" alt="CRUD" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Automação de tarefas</span>
+                        <h3 class="project-title">Cypress para WEB</h3>
+                        <p class="project-desc">
+                            Projeto desenvolvido para a aprendizagem e conhecimento da ferramenta CYPRESS. Projeto e ferrramenta voltadas ao ambiente web com foco em experiencia do Usuário.                     </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CYPRESS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Biuhl/automacao-tarefas-estudo" class="btn-project btn-github">
+                                <span class="material-symbols-rounded">code</span> GitHub
+                            </a>
+                            <a href="https://github.com/Biuhl/automacao-tarefas-estudo" class="btn-project btn-demo">
+                                <span class="material-symbols-rounded">open_in_new</span> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contato">
+            <div class="contact-container">
+                <div class="section-header">
+                    <span class="section-tag">Contato</span>
+                    <h2 class="section-title">Vamos Construir Algo Juntos?</h2>
+                    <p class="contact-subtitle">Escolha o seu canal preferido ou baixe meu currículo técnico detalhado.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-methods">
+                        <a href="mailto:gabriel.silva27513@gmail.com" class="contact-card-item">
+                            <span class="material-symbols-rounded contact-icon">mail</span>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>gabriel.silva27513@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-leite-68685a279/?locale=pt" target="_blank" class="contact-card-item">
+                            <span class="material-symbols-rounded contact-icon">share_reviews</span>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/gabrielleite</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Biuhl" target="_blank" class="contact-card-item">
+                            <span class="material-symbols-rounded contact-icon">terminal</span>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>github.com/gabrielleite</p>
+                            </div>
+                        </a>
+                        <div class="contact-card-item no-link">
+                            <span class="material-symbols-rounded contact-icon">call</span>
+                            <div>
+                                <h4>Telefone / WhatsApp</h4>
+                                <p>+55 (19) 9993-52801</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-cta-box">
+                        <span class="material-symbols-rounded resume-icon">description</span>
+                        <h3>Currículo Técnico</h3>
+                        <p>Tenha acesso a todas as informações de contato, formação acadêmica, histórico profissional e portfólio de habilidades consolidadas de forma simplificada.</p>
+                        <a href="CV-GABRIEL-2026.pdf" class="btn btn-primary btn-download" download>
+                            <span class="material-symbols-rounded">download</span> Baixar Currículo PDF
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    <main class="learn">
-        <section class="textConteiner">
 
-                <div class="texto">
-                    <div class="imgDiv">
-
-                    </div>
-                </div>
-                <div class="historias">
-                    
-                </div>
-        </section>
-        <section class="certificados">
-
-        </section>
-        
-    </main>
-<main class="socials">
-    <section class="midias">
-        <h2>Conecte-se comigo</h2>
-        <div class="social-links">
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/gabriel-leite-68685a279/?locale=pt" target="_blank" class="social-card linkedin">
-                <span class="material-symbols-outlined">work</span>
-                <div class="social-info">
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/Gabriel-Leite</p>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-
-            <a href="https://www.instagram.com/biu_hl/" target="_blank" class="social-card instagram">
-                <span class="material-symbols-outlined">photo_camera</span>
-                <div class="social-info">
-                    <h3>Instagram</h3>
-                    <p>@GabrielLeite</p>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-
-            <a href="mailto:gabriel.silva27513@gmail.com" class="social-card email">
-                <span class="material-symbols-outlined">email</span>
-                <div class="social-info">
-                    <h3>Email</h3>
-                    <p>gabriel.silva27513@gmail.com</p>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-    </section>
-</main>
-    <footer>
-        <p>&copy; 2026 Gabriel Leite — Todos os direitos reservados.</p>
-    </footer>
-    <script>
-    (function() {
-        const track = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        const cards = track.querySelectorAll('.card');
-        if (cards.length === 0) return;
-
-        let currentIndex = 0;
-        let visibleCount = getVisibleCount();
-
-        // FUNÇÃO ADAPTADA: Pega a largura do card e o gap real do CSS no momento exato
-        function getMovementMetrics() {
-            const currentCardWidth = cards[0].getBoundingClientRect().width;
-            // Pega o gap que o CSS está aplicando no momento (seja desktop ou mobile)
-            const computedGap = parseFloat(window.getComputedStyle(track).gap) || 0;
-            return {
-                cardWidth: currentCardWidth,
-                gap: computedGap,
-                totalCardWidth: currentCardWidth + computedGap
-            };
-        }
-
-        function getVisibleCount() {
-            const { totalCardWidth } = getMovementMetrics();
-            const wrapperWidth = track.parentElement.offsetWidth;
-            const availableWidth = wrapperWidth - 20;
-            const count = Math.floor(availableWidth / totalCardWidth);
-            return Math.max(1, count);
-        }
-
-        function updateCarousel() {
-            const { totalCardWidth } = getMovementMetrics();
-            const maxIndex = Math.max(0, cards.length - visibleCount);
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2026 Gabriel Leite. Projetado com excelência UI/UX e código limpo.</p>
+            </div>
             
-            if (currentIndex > maxIndex) currentIndex = maxIndex;
-            if (currentIndex < 0) currentIndex = 0;
-
-            const offset = currentIndex * totalCardWidth;
-            track.style.transform = `translateX(-${offset}px)`;
-        }
-
-        function nextSlide() {
-            const maxIndex = Math.max(0, cards.length - visibleCount);
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                const maxIndex = Math.max(0, cards.length - visibleCount);
-                currentIndex = maxIndex;
-            }
-            updateCarousel();
-        }
-
-        function handleResize() {
-            visibleCount = getVisibleCount();
-            const maxIndex = Math.max(0, cards.length - visibleCount);
-            if (currentIndex > maxIndex) currentIndex = maxIndex;
-            updateCarousel();
-        }
-
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        window.addEventListener('resize', handleResize);
-
-        setTimeout(() => {
-            visibleCount = getVisibleCount();
-            currentIndex = 0;
-            updateCarousel();
-        }, 100);
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
-        });
-
-        window.addEventListener('load', () => {
-            setTimeout(handleResize, 200);
-        });
-
-    })();
-</script>
+            <div class="footer-right">
+                <div class="footer-socials">
+                    <a href="#" title="GitHub"><span class="material-symbols-rounded">terminal</span></a>
+                    <a href="#" title="LinkedIn"><span class="material-symbols-rounded">share_reviews</span></a>
+                </div>
+                <a href="#inicio" class="back-to-top" title="Voltar ao topo">
+                    <span class="material-symbols-rounded">arrow_upward</span>
+                </a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
